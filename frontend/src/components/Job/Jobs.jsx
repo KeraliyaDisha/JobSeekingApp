@@ -23,11 +23,9 @@ function Jobs() {
     fetchJobs();
   }, []);
 
-  useEffect(() => {
-    if (!isAuthorized) {
-      navigateTo("/login");
-    }
-  }, [isAuthorized, navigateTo]);
+  if (!isAuthorized) {
+    navigateTo("/");
+  }
 
   return (
     <section className="jobs page">
