@@ -83,6 +83,7 @@ export const getMyJob = catchAsyncError(async (req, res, next) => {
 });
 
 export const updateJob = catchAsyncError(async (req, res, next) => {
+  
   const { role } = req.user;
   if (role === "Job Seeker") {
     return next(
